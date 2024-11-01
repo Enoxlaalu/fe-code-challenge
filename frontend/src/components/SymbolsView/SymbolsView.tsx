@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 const SymbolsView = () => {
   const [activeSymbol, setActiveSymbol] = useState<null | string>(null);
+
   const handleSymbolClick = (symbolId: string) => {
     setActiveSymbol((s) => (s === symbolId ? null : symbolId));
   };
@@ -18,7 +19,7 @@ const SymbolsView = () => {
       <div className="symbolsView__content">
         <PriceChart symbolId={activeSymbol} />
         <div className="symbolsView__cards">
-          <SymbolsGrid onSymbolClick={handleSymbolClick} />
+          <SymbolsGrid onSymbolClick={handleSymbolClick} activeSymbol={activeSymbol} />
         </div>
       </div>
     </div>
