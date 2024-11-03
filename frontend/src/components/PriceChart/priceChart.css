@@ -1,7 +1,8 @@
 .priceChart {
+  display: grid;
+  grid-template-columns: auto 1fr;
   width: 400px;
   height: 300px;
-  display: flex;
 }
 
 @media (max-width: 1023px) {

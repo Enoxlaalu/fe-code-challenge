@@ -1,0 +1,28 @@
+.symbolsView {
+  display: grid;
+}
+
+.symbolsView__content {
+  display: grid;
+}
+
+.symbolsView__chart {
+  padding: 12px;
+}
+
+.symbolsView__cards {
+  padding: 16px;
+  background-color: #dbdbdb;
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+@media (min-width: 1024px) {
+  .symbolsView__content {
+    grid-template-columns: 1fr 400px;
+  }
+
+  .symbolsView__chart {
+    order: 1;
+  }
+}
