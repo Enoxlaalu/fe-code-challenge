@@ -2,7 +2,7 @@ import './symbolCard.css';
 import { useAppSelector } from '@/hooks/redux';
 import SymbolCardHeader from '@/components/SymbolCard/SymbolCardHeader';
 import SymbolCardBody from '@/components/SymbolCard/SymbolCardBody';
-import { useRef } from 'react';
+import { memo, useRef } from 'react';
 
 type SymbolCardProps = {
   id: string;
@@ -11,7 +11,7 @@ type SymbolCardProps = {
   activeSymbol: string | null;
 };
 
-const SymbolCard = ({ id, onClick, price, activeSymbol }: SymbolCardProps) => {
+const SymbolCard = memo(({ id, onClick, price, activeSymbol }: SymbolCardProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const { trend, companyName, industry, marketCap } = useAppSelector(
     (state) => state.stocks.entities[id]
@@ -57,5 +57,8 @@ const SymbolCard = ({ id, onClick, price, activeSymbol }: SymbolCardProps) => {
       />
     </div>
   );
-};
+});
+
 export default SymbolCard;
+
+SymbolCard.displayName = 'SymbolCard';
