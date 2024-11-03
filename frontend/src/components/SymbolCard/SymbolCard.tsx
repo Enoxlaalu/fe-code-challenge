@@ -3,6 +3,7 @@ import { useAppSelector } from '@/hooks/redux';
 import SymbolCardHeader from '@/components/SymbolCard/SymbolCardHeader';
 import SymbolCardBody from '@/components/SymbolCard/SymbolCardBody';
 import { memo, useRef } from 'react';
+import { selectShowCardInfo } from '@/store/dashboardOptionsSlice';
 
 type SymbolCardProps = {
   id: string;
@@ -16,6 +17,7 @@ const SymbolCard = memo(({ id, onClick, price, activeSymbol }: SymbolCardProps) 
   const { trend, companyName, industry, marketCap } = useAppSelector(
     (state) => state.stocks.entities[id]
   );
+  const showCardInfo = useAppSelector(selectShowCardInfo);
 
   const handleOnClick = () => {
     onClick(id);
@@ -54,6 +56,7 @@ const SymbolCard = memo(({ id, onClick, price, activeSymbol }: SymbolCardProps) 
         price={price}
         industry={industry}
         marketCap={marketCap}
+        showCardInfo={showCardInfo}
       />
     </div>
   );

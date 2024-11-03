@@ -6,7 +6,7 @@ import { ReactComponent as IndustryIcon } from '@/assets/industry.svg';
 import { ReactComponent as MarketCapIcon } from '@/assets/market_cap.svg';
 import { memo } from 'react';
 
-type SymbolCardListProps = Omit<SymbolCardBodyProps, 'price'>;
+type SymbolCardListProps = Omit<SymbolCardBodyProps, 'price' | 'showCardInfo'>;
 
 const SymbolCardList = ({ companyName, industry, marketCap }: SymbolCardListProps) => {
   const listItems = [
