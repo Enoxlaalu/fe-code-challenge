@@ -1,9 +1,7 @@
-.symbolsView {
-  display: grid;
-}
-
+.symbolsView,
 .symbolsView__content {
   display: grid;
+  overflow: hidden;
 }
 
 .symbolsView__chart {
@@ -13,7 +11,8 @@
 .symbolsView__cards {
   padding: 16px;
   background-color: #dbdbdb;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   scrollbar-width: none;
 }
 
