@@ -6,10 +6,17 @@ import { useState } from 'react';
 import './symbolsView.css';
 
 const SymbolsView = () => {
-  const [activeSymbol, setActiveSymbol] = useState<null | string>(null);
+  const savedSymbol = localStorage.getItem('activeSymbol');
+
+  const [activeSymbol, setActiveSymbol] = useState<null | string>(savedSymbol || null);
 
   const handleSymbolClick = (symbolId: string) => {
-    setActiveSymbol((s) => (s === symbolId ? null : symbolId));
+    setActiveSymbol((s) => {
+      const newActiveSymbol = s === symbolId ? null : symbolId;
+      localStorage.setItem('activeSymbol', newActiveSymbol!);
+
+      return newActiveSymbol;
+    });
   };
 
   return (

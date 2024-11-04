@@ -16,7 +16,7 @@ type SymbolCardProps = {
 
 const SymbolCard = memo(({ id, onClick, price, activeSymbol }: SymbolCardProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const ref2 = useRef(price);
+  const priceRef = useRef(price);
   const { shadow, addShadow, setShadow } = useAddBoxShadow();
   const { effect, addEffect, setEffect } = useAddEffect();
   const { trend, companyName, industry, marketCap } = useAppSelector(
@@ -29,12 +29,12 @@ const SymbolCard = memo(({ id, onClick, price, activeSymbol }: SymbolCardProps) 
   };
 
   useEffect(() => {
-    addShadow(price, ref2.current);
+    addShadow(price, priceRef.current);
   }, [price]);
 
   useEffect(() => {
-    addEffect(price, ref2.current);
-    ref2.current = price;
+    addEffect(price, priceRef.current);
+    priceRef.current = price;
   }, [activeSymbol, price]);
 
   const getClassName = () => {
