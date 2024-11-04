@@ -1,11 +1,11 @@
 import './symbolCard.css';
 import { useAppSelector } from '@/hooks/redux';
-import SymbolCardHeader from '@/components/SymbolCard/SymbolCardHeader';
-import SymbolCardBody from '@/components/SymbolCard/SymbolCardBody';
 import { memo, useEffect, useRef } from 'react';
 import { selectShowCardInfo } from '@/store/dashboardOptionsSlice';
 import useAddBoxShadow from '@/hooks/useAddBoxShadow';
 import useAddEffect from '@/hooks/useAddEffect';
+import SymbolCardBody from '@/components/SymbolCard/src/SymbolCardBody';
+import SymbolCardHeader from '@/components/SymbolCard/src/SymbolCardHeader';
 
 type SymbolCardProps = {
   id: string;

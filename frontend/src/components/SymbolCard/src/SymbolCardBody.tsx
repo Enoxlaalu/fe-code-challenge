@@ -1,7 +1,7 @@
+import SymbolCardList from '@/components/SymbolCard/src/SymbolCardList';
+import SymbolCardPrice from '@/components/SymbolCard/src/SymbolCardPrice';
 import './symbolCardBody.css';
-import SymbolCardPrice from '@/components/SymbolCard/SymbolCardPrice';
 import { Stock } from '@/store/stocksSlice';
-import SymbolCardList from '@/components/SymbolCard/SymbolCardList';
 
 export type SymbolCardBodyProps = {
   price: number;

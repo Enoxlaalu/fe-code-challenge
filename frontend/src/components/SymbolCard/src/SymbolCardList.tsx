@@ -1,5 +1,5 @@
 import ListItem from '@/components/ListItem';
-import { SymbolCardBodyProps } from '@/components/SymbolCard/SymbolCardBody/SymbolCardBody';
+import { SymbolCardBodyProps } from '@/components/SymbolCard/src/SymbolCardBody';
 import { showShortenedAmount } from '@/helpers/currency';
 import { ReactComponent as CompanyIcon } from '@/assets/company.svg';
 import { ReactComponent as IndustryIcon } from '@/assets/industry.svg';
