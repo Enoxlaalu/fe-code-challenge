@@ -2,6 +2,7 @@ import SymbolCardList from '@/components/SymbolCard/src/SymbolCardList';
 import SymbolCardPrice from '@/components/SymbolCard/src/SymbolCardPrice';
 import './symbolCardBody.css';
 import { Stock } from '@/store/stocksSlice';
+import { memo } from 'react';
 
 export type SymbolCardBodyProps = {
   price: number;
@@ -17,4 +18,4 @@ const SymbolCardBody = ({ price, showCardInfo, ...rest }: SymbolCardBodyProps) =
   );
 };
 
-export default SymbolCardBody;
+export default memo(SymbolCardBody);

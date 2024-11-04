@@ -5,13 +5,18 @@ import { memo } from 'react';
 
 type SymbolCardHeaderProps = {
   id: string;
-  trend: string | null;
+  trend: 'UP' | 'DOWN' | null;
 };
 
 const SymbolCardHeader = memo(({ id, trend }: SymbolCardHeaderProps) => {
   return (
     <header className="symbolCard__header">
-      <img src={trend === 'UP' ? arrowUp : arrowDown} className="symbolCard__arrowIcon" />
+      {trend && (
+        <img
+          src={trend === 'UP' ? arrowUp : trend === 'DOWN' ? arrowDown : ''}
+          className="symbolCard__arrowIcon"
+        />
+      )}
       {id}
     </header>
   );
