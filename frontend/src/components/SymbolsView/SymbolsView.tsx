@@ -13,7 +13,7 @@ const SymbolsView = () => {
   const handleSymbolClick = (symbolId: string) => {
     setActiveSymbol((s) => {
       const newActiveSymbol = s === symbolId ? null : symbolId;
-      localStorage.setItem('activeSymbol', newActiveSymbol!);
+      localStorage.setItem('activeSymbol', newActiveSymbol || '');
 
       return newActiveSymbol;
     });

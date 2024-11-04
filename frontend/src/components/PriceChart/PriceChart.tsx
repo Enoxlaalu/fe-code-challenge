@@ -22,12 +22,13 @@ const PriceChart = ({ symbolId }: PriceChartProps) => {
   const data = useAppSelector(selectors.selectPriceHistory);
   const symbolInfo = useAppSelector(selectors.selectSymbolInfo);
 
-  if (apiState.loading && symbolId !== null)
+  if (apiState.loading && symbolId !== null) {
     return (
       <div className="priceChart">
         <Loading />
       </div>
     );
+  }
   if (apiState.error) return <div className="priceChart">Failed to get price history!</div>;
   if (!symbolId) return <div className="priceChart">Select stock</div>;
   return (
